@@ -34,4 +34,20 @@ calculateButton.addEventListener('click', function() {
   // Calculate the total price and display it
   const totalPrice = Math.round(diffMinutes * pricePerMinute);
   resultDiv.innerHTML = `Total price: £${totalPrice}`;
+  
+  // Calculate the hours and minutes spent
+  const hoursSpent = Math.floor(diffMinutes / 60);
+  const minutesSpent = diffMinutes % 60;
+  
+  // Display the time spent
+  const timeSpentDiv = document.getElementById('timeSpent');
+  timeSpentDiv.innerHTML = `Time spent: ${hoursSpent} hours and ${minutesSpent} minutes`;
 });
+
+let timeStartSelector = document.getElementById('start-time');
+let timeFinishSelector = document.getElementById('finish-time');
+
+const startTime = startInput.value.getTime();
+calculateButton.addEventListener('click', ()=>{
+  console.log(startTime);
+})
